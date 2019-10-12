@@ -29,6 +29,16 @@ class PhotosController < ApplicationController
         user_id: "wXxRQShrF4o",
         user_name: "Cesar La Rosa",
         user_url: "https://unsplash.com/@obcesar"
+      ),
+      Photo.new(
+        id: "h9I6PwlqY4E",
+        description: "",
+        image_url: "https://images.unsplash.com/photo-1570887759466-83533140ed68?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjk1NzM0fQ",
+        thumb_url: "https://images.unsplash.com/photo-1570887759466-83533140ed68?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjk1NzM0fQ",
+        source_url: "https://unsplash.com/photos/h9I6PwlqY4E",
+        user_id: "OGpiPy_pFU0",
+        user_name: "Kenny Luo",
+        user_url: "https://unsplash.com/@kennyluoping"
       )
     ]
   end

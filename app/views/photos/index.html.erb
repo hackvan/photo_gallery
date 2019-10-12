@@ -1,8 +1,14 @@
-<h1>Photos#index</h1>
-<% @photos.each do |photo| %>
-  <div>
-    <p><%= image_tag photo.thumb_url %></p>
-    <p>Autor: <%= photo.user_name %></p>
-    <p>Favorite: <%= photo.is_favorite? %></p>
+<div class="row justify-content-sm-center">
+  <div class="col-lg-10 col-lg-offset-1">
+    <h2>Featured Photos</h2>
+    <hr>
+    <div class="container">
+      <div class="row">
+        <% @photos.each do |photo| %>
+          <%= render partial: "photo_card", locals: { photo: photo } %>
+        <% end %>
+      </div>
+    </div>
+
   </div>
-<% end %>
+</div>

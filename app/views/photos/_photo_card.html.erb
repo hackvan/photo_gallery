@@ -1,0 +1,20 @@
+<div class="col-8 offset-2 col-sm-6 offset-sm-0 col-lg-4 mb-4">
+  <div class="card card-layout">
+    <a href="<%= photo.source_url %>">
+      <%= image_tag photo.image_url, class: 'card-img-top rounded', height: '200px' %>
+    </a>
+    <a href="<%= photo.user_url %>">
+      <p class="mx-3 my-0 text-center"><small class="text-muted">By: <%= photo.user_name %></small></p>
+    </a>
+    <div class="card-body px-2 py-2">
+      <p class="lead text-truncate mb-0"><%= photo.description %></p>
+    </div>
+    <div class="card-footer text-right px-2 py-2">
+      <% if photo.is_favorite? %>
+        <a href="#" class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="Unmark as a favorite">Unmark</a>
+      <% else %>
+        <a href="#" class="btn btn-info" data-toggle="tooltip" data-placement="left" title="Mark as a favorite">Mark</a>
+      <% end %>
+    </div>
+  </div>
+</div>
