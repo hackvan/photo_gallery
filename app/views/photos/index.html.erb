@@ -1,0 +1,8 @@
+<h1>Photos#index</h1>
+<% @photos.each do |photo| %>
+  <div>
+    <p><%= image_tag photo.thumb_url %></p>
+    <p>Autor: <%= photo.user_name %></p>
+    <p>Favorite: <%= photo.is_favorite? %></p>
+  </div>
+<% end %>
