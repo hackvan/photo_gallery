@@ -1,0 +1,7 @@
+var favorite_card_footer = document.querySelector('.card[data-id="<%= @photo_id %>"] .card-footer');
+var fav_button   = favorite_card_footer.querySelector('#fav');
+var unfav_button = favorite_card_footer.querySelector('#unfav');
+var parent_node  = fav_button.parentNode;
+
+fav_button.classList.add("hidden");
+unfav_button.classList.remove("hidden");

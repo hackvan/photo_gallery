@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   get 'photos/index'
   get 'photos/random'
   get 'search', to: 'photos#search'
-  # resources :favorites, only [:create, :destroy]
+
+  post   'photo/:photo_id/fav',   to: 'favorites#create',  as: 'photo_favorites'
+  delete 'photo/:photo_id/unfav', to: 'favorites#destroy', as: 'photo_favorite'
 end

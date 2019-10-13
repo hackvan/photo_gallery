@@ -1,5 +1,5 @@
 <div class="col-8 offset-2 col-sm-6 offset-sm-0 col-lg-4 mb-4">
-  <div class="card card-layout">
+  <div class="card card-layout" data-id="<%= photo.id %>">
     <a href="<%= photo.source_url %>">
       <%= image_tag photo.thumb_url, class: 'card-img-top rounded', height: '200px' %>
     </a>
@@ -10,11 +10,8 @@
       <p class="lead text-truncate mb-0"><%= photo.description %></p>
     </div>
     <div class="card-footer text-right px-2 py-2">
-      <% if photo.is_favorite? %>
-        <a href="#" class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="Unmark as a favorite">Unmark</a>
-      <% else %>
-        <a href="#" class="btn btn-info" data-toggle="tooltip" data-placement="left" title="Mark as a favorite">Mark</a>
-      <% end %>
+      <%= button_to 'Unmark', photo_favorite_path(photo.id), method: :delete, remote: true, data: { toggle: 'tooltip', placement: 'left' }, id: 'unfav', class: unfav_classes(photo.is_favorite?), title:"Unmark as a favorite" %>
+      <%= button_to 'Mark', photo_favorites_path(photo.id), remote: true, data: { toggle: 'tooltip', placement: 'left' }, id: 'fav', class: fav_classes(photo.is_favorite?), title:"Mark as a favorite" %>
     </div>
   </div>
 </div>
