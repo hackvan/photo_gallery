@@ -30,6 +30,14 @@ module Unsplash::API
     photo = get_request(uri).first
   end
 
+  def self.get_favorites_photos
+    photos = []
+    Favorite.recent.each do |fav|
+      photos << get_photo(fav.photo_id)
+    end
+    photos
+  end
+
   private
     def self.public_auth_headers
       { 

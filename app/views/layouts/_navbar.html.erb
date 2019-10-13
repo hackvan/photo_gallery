@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
   <a class="navbar-brand" href="<%= root_path %>">
     <img src="https://ideaware.co/wp-content/uploads/2018/02/Logosimbolo-Ideaware-azul-01-700x543.png" width="35" height="25" class="d-inline-block align-top" alt="">
     IdeaGallery
@@ -10,13 +10,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <%= link_to "Photos", photos_index_path, class: 'nav-link'%>
+        <%= link_to "Photos", photos_path, class: 'nav-link' %>
       </li>
       <li class="nav-item">
-        <%= link_to "Random", photos_random_path, class: 'nav-link'%>
+        <%= link_to "Random", photos_random_path, class: 'nav-link' %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Favorites</a>
+        <%= link_to "Favorites", photos_favorites_path, class: 'nav-link' %>
       </li>
     </ul>
     <%= form_with url: search_path, method: :get, local: true, class: 'form-inline my-2 my-lg-0' do |form| %>

@@ -4,12 +4,17 @@ class PhotosController < ApplicationController
   end
 
   def random
-    @photos = Unsplash::API.get_random_photos(count: 12)
+    @photos = Unsplash::API.get_random_photos
     render :index
   end
 
   def search
     @photos = Unsplash::API.get_search_photos(query: search_param[:query])
+    render :index
+  end
+
+  def favorites
+    @photos = Unsplash::API.get_favorites_photos
     render :index
   end
 
