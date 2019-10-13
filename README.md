@@ -1,24 +1,44 @@
-# README
+# Photo Gallery
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![homepage](/public/images/homepage.png "homepage")
 
-Things you may want to cover:
+This project is a test example app with Ruby on Rails and with an integration API of Unsplash.
 
-* Ruby version
+Ruby version: `2.6.3`
+Rails version: `6.0.0`
 
-* System dependencies
+## Installation
 
-* Configuration
+Clone the project
 
-* Database creation
+`git clone https://github.com/hackvan/photo_gallery`
+`cd photo_gallery`
 
-* Database initialization
+> If you are using rvm please you can create a gemset for the project:
+> `rvm use 2.6.3@photo_gallery`
 
-* How to run the test suite
+Install dependencies
 
-* Services (job queues, cache servers, search engines, etc.)
+`bundle install`
 
-* Deployment instructions
+> You need bundler in order to run this command, you can install with:
+> `gem install bundler`
 
-* ...
+## Database
+
+In order to crate the database
+
+`rails db:migrate`
+
+> This project use postgresql, you need to install a run it
+
+
+## Run
+
+To run the application
+
+`rails server`
+
+Open your web browser and go to
+
+`http://localhost:3000`
