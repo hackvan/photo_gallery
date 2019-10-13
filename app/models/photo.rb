@@ -14,4 +14,20 @@ class Photo
   def is_favorite?
     self.favorites.exists?
   end
+
+  def self.get_photos
+    Unsplash::API.get_photos
+  end
+
+  def self.get_random_photos
+    Unsplash::API.get_random_photos
+  end
+
+  def self.get_search_photos(query)
+    Unsplash::API.get_search_photos(query: query)
+  end
+
+  def self.get_favorites_photos
+    Unsplash::API.get_favorites_photos
+  end
 end

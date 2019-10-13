@@ -2,27 +2,27 @@ class PhotosController < ApplicationController
   def index
     @title  = 'Photos'
     @header = 'Recently Photos'
-    @photos = Unsplash::API.get_photos
+    @photos = Photo.get_photos
   end
 
   def random
     @title  = 'Random'
     @header = 'Random Photos'
-    @photos = Unsplash::API.get_random_photos
+    @photos = Photo.get_random_photos
     render :index
   end
 
   def search
     @title  = 'Search'
     @header = "Related searches to '#{search_param[:query]}'"
-    @photos = Unsplash::API.get_search_photos(query: search_param[:query])
+    @photos = Photo.get_search_photos(search_param[:query])
     render :index
   end
 
   def favorites
     @title  = 'Favorites'
     @header = 'Favorite Photos'
-    @photos = Unsplash::API.get_favorites_photos
+    @photos = Photo.get_favorites_photos
     render :index
   end
 
