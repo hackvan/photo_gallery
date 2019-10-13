@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2">
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" href="<%= root_path %>">
     <img src="https://ideaware.co/wp-content/uploads/2018/02/Logosimbolo-Ideaware-azul-01-700x543.png" width="35" height="25" class="d-inline-block align-top" alt="">
-    Ideatest
+    IdeaGalery
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -10,18 +10,18 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Photos</a>
+        <%= link_to "Photos", photos_index_path, class: 'nav-link'%>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Random</a>
+        <%= link_to "Random", photos_random_path, class: 'nav-link'%>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Favorites</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" size="30" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <%= form_with url: search_path, method: :get, local: true, class: 'form-inline my-2 my-lg-0' do |form| %>
+      <%= form.search_field :query, size: 30, placeholder: 'Search...', class: 'form-control mr-sm-2' %>
+      <%= form.submit 'Search', class: 'btn btn-outline-info my-2 my-sm-0' %>
+    <% end %>
   </div>
 </nav>
