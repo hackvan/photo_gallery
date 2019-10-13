@@ -1,11 +1,17 @@
+<% content_for(:title, @title) %>
+
 <div class="row justify-content-sm-center">
-  <div class="col-lg-10 col-lg-offset-1">
-    <h2>Featured Photos</h2>
+  <div class="col-lg-10">
+    <h2><%= @header %></h2>
     <hr>
     <div class="container">
       <div class="row">
-        <% @photos.each do |photo| %>
-          <%= render partial: "photo_card", locals: { photo: photo } %>
+        <% if @photos.any? %>
+          <% @photos.each do |photo| %>
+            <%= render partial: "photo_card", locals: { photo: photo } %>
+          <% end %>
+        <% else %>
+          <%= render partial: "not_found" %>
         <% end %>
       </div>
     </div>
